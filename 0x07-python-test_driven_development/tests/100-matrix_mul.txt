@@ -138,12 +138,14 @@ not a list, a TypeError is raised.
 
 ::
 
-    >>> print(matrix_mul([[1, 2]], "also not a list"))
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     Traceback (most recent call last):
     TypeError: m_b must be a list
 
 ::
-
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     >>> print(matrix_mul("not a list", "also not a list"))
     Traceback (most recent call last):
     TypeError: m_a must be a list
@@ -219,6 +221,7 @@ equivalent. Otherwise, a TypeError is raised.
     ... [1, 2],
     ... [3, 4, 5]
     Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     TypeError: each row of m_b must should be of the same size
     ... [1, 2],
     ... [3, 4]
