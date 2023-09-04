@@ -218,10 +218,12 @@ equivalent. Otherwise, a TypeError is raised.
     ... [1, 2],
     ... [3, 4]
     ... ]
-    >>> m_b = [
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     ... [1, 2],
     ... [3, 4, 5]
-    ... ]
+    Traceback (most recent call last):
+    TypeError: each row of m_b must should be of the same size
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
     TypeError: each row of m_b must should be of the same size
@@ -231,7 +233,8 @@ equivalent. Otherwise, a TypeError is raised.
     >>> m_a = [
     ... [1, 2],
     ... [3, 4, 5]
-    ... ]
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     >>> m_b = m_a
     >>> print(matrix_mul(m_a, m_b))
     Traceback (most recent call last):
