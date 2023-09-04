@@ -202,10 +202,18 @@ equivalent. Otherwise, a TypeError is raised.
 
 ::
 
-    >>> m_a = [
+    cted:
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     ... [1, 2],
-    ... [3, 4, 5]
+    ... [3, 4]
     ... ]
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
     Traceback (most recent call last):
     TypeError: each row of m_a must should be of the same size
     Traceback (most recent call last):
@@ -241,9 +249,12 @@ equivalent. Otherwise, a TypeError is raised.
     Traceback (most recent call last):
     TypeError: each row of m_a must should be of the same size
     Traceback (most recent call last):
-    TypeError: each row of m_b must should be of the same size
+    Traceback (most recent call last):
+    Traceback (most recent call last):
+    TypeError: each row of m_a must should be of the same size
 
 ::
+    Traceback (most recent call last):
     Traceback (most recent call last):
     Traceback (most recent call last):
     TypeError: each row of m_a must should be of the same size
