@@ -41,6 +41,9 @@ Addition of an int and a string
 
 Passing None as Argument
         >>> add_integer(None)
+	Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
         Traceback (most recent call last):
         ...
         TypeError: a must be an integer
