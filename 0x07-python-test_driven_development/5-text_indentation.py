@@ -28,4 +28,3 @@ def text_indentation(text):
                 c += 1
             continue
         c += 1
-
