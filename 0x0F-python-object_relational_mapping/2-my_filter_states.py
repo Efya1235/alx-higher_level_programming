@@ -1,38 +1,30 @@
 #!/usr/bin/python3
-"""
-This script displays all values in the states table of
-hbtn_0e_0_usa where the name matches the provided argument.
-"""
-
-import MySQLdb
+"""A script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument."""
 import sys
+import MySQLdb
 
-if __name__ == '__main__':
-    if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database_name> <state_name>".format(sys.argv[0]))
-        sys.exit(1)
 
-    username, password, database_name, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
-
-    db_connection = MySQLdb.connect(
+def main():
+    conn = MySQLdb.connect(
         host="localhost",
-        user=username,
-        passwd=password,
-        db=database_name,
-        port=3306
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        charset="utf8"
     )
 
-    db_cursor = db_connection.cursor()
+    cursor = conn.cursor()
+    search = sys.argv[4]
+    query = """SELECT * FROM states WHERE name = '{:s}' ORDER BY id ASC""".format(search)
+    cursor.execute(query)
+    states = cursor.fetchall()
+    for h in states:
+        if h[1] == search:
+            print(h)
+    cursor.close()
+    conn.close()
 
-    # Define the SQL query with string formatting
-    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
 
-    db_cursor.execute(sql_query, (state_name,))
-
-    rows_selected = db_cursor.fetchall()
-
-    for row in rows_selected:
-        print(row)
-
-    db_cursor.close()
-    db_connection.close()
+if __name__ == '__main__':
+    main()
